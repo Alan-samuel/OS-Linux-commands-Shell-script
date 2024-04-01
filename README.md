@@ -620,18 +620,13 @@ chmod 777 scriptest.sh
 ./scriptest.sh 1 2 3
 
 ## OUTPUT
-
- ./scriptest.sh: line 4: bash
-\#!/bin/sh
-echo "File name is $0"
-echo "File name is" basename: not found
+File name is ./scriptest.sh File name is scriptest.sh First arg. is 1 Second arg. is 2 Third arg. is 3 Fourth arg. is The @is123
+# is
 
 1
 ls file1
 ## OUTPUT
-file1
-
-echo $?
+file1 echo $?
 ## OUTPUT 
 ./one
 bash: ./one: Permission denied
@@ -851,6 +846,7 @@ $ chmod 755 ifnested.sh
 $ ./ifnested.sh 
 ##OUTPUT
 %HOME The object exists, is it a file?
+
 # looking for a possible value using elif
 cat elifcheck.sh 
 ```bash
@@ -878,7 +874,7 @@ $ chmod 755 elifcheck.sh
  
 $ ./elifcheck.sh 
 ## OUTPUT
-
+Welcome Ram Please enjoy your visit Welcome Rahim Please enjoy your visit Special testing account gganesh, Do not forget to logout when you're done Sorry, you are not allowed here
 
 # testing compound comparisons
 cat> ifcompound.sh 
@@ -894,6 +890,7 @@ fi
 $ chmod 755 ifcompound.sh
 $ ./ifcompound.sh 
 ## OUTPUT
+The file exists and you can write to it
 
 # using the case command
 cat >casecheck.sh 
@@ -913,6 +910,9 @@ esac
 $ chmod 755 casecheck.sh 
  
 $ ./casecheck.sh 
+
+#OUTPUT:
+Welcome Ram/Rahim Please enjoy your visit Special testing account gganesh, Do not forget to logout when you're done Sorry, you are not allowed here cat > whiletest
  
 cat > whiletest
 ```bash
@@ -929,7 +929,7 @@ $ chmod 755 whiletest.sh
  
 $ ./whiletest.sh
  
- 
+ 10 9 8 7 6 5 4 3 2 1
 cat untiltest.sh 
 ```bash
 \#using the until command
@@ -942,7 +942,7 @@ done
 ``` 
 $ chmod 755 untiltest.sh
  
- 
+ 100 75 50 25
  
 cat forin1.sh 
 ```bash
@@ -956,7 +956,8 @@ done
  
 $ chmod 755 forin1.sh
  
- 
+ The next state is Alabama The next state is Alaska The next state is Arizona The next state is Arkansas The next state is California The next state is Colorado
+
 cat forin2.sh 
 ```bash
 \#!/bin/bash
@@ -968,7 +969,9 @@ done
  ```
  
 $ chmod 755 forin2.sh
- 
+
+word:I word:dont know if thisll word:work cat forin3.sh 
+
 cat forin2.sh 
 ```bash
 \#!/bin/bash
@@ -981,6 +984,8 @@ done
 $ chmod 755 forin2.sh
  
 $ ./forin2.sh 
+
+word:I word:don't word:know word:if word:this'll word:work
  
 cat forin3.sh 
 ```bash
@@ -992,6 +997,13 @@ echo "word:$test"
 done
 ```
 $ ./forin3.sh 
+
+word:I
+word:don't
+word:know
+word:if
+word:this'll
+word:work
  
 cat forin1.sh 
 ```bash
@@ -1005,6 +1017,14 @@ done
 $ chmod 755 forin1.sh
 
 ## OUTPUT
+
+The next state is Alabama
+The next state is Alaska
+The next state is Arizona
+The next state is Arkansas
+The next state is California
+The next state is Colorado
+
 cat forinfile.sh 
 ```bash
 #!/bin/bash
@@ -1016,6 +1036,8 @@ echo "Visit beautiful $file“
 done
 ```
 $ chmod 777 forinfile.sh
+Visit beautiful cities
+
 $ cat cities
 Hyderabad
 Alampur
@@ -1026,7 +1048,13 @@ Bhadrachalam
 Khammam
 
 ## OUTPUT
-
+Hyderbad
+Alampur
+Basara
+Warangal
+Adilabad
+Bhadrachalam
+Khammam
 
 cat forctype.sh 
 ```bash
@@ -1040,7 +1068,11 @@ done
 $ chmod 755 forctype.sh
 $ ./forctype.sh 
 ## OUTPUT
-
+The value of i is 1
+The value of i is 2
+The value of i is 3
+The value of i is 4
+The value of i is 5
 cat forctype1.sh 
 ```bash
 #!/bin/bash
@@ -1053,7 +1085,11 @@ done
 $ chmod 755 forctype.sh
 $ ./forctype1.sh 
 ## OUTPUT
-
+1-5
+2-4
+3-3
+4-2
+5 c-1
 cat fornested1.sh 
 ```bash
 #!/bin/bash
@@ -1071,7 +1107,18 @@ $ chmod 755 fornested1.sh
  
 $ ./fornested1.sh 
  ## OUTPUT
-
+Starting loop 1:
+Inside loop: 1
+Inside loop: 2
+Inside loop: 3
+Starting loop 2:
+Inside loop: 1
+Inside loop: 2
+Inside loop: 3
+Starting loop 3:
+Inside loop: 1
+Inside loop: 2
+Inside loop: 3
  
 cat forbreak.sh 
 ```bash
@@ -1113,7 +1160,10 @@ $ chmod 755 forcontinue.sh
  
 $ ./forcontinue.sh 
 ## OUTPUT
- 
+ Iteration number: 1
+Iteration number: 2
+The for loop is completed
+
 cat exread.sh 
 ```bash
 #!/bin/bash
@@ -1128,7 +1178,8 @@ $ chmod 755 exread.sh
 $ ./exread.sh 
 ## OUTPUT
 
-
+Enter your name: Alan
+Hello Alan, welcome to my program.
  cat exread1.sh
 ```bash
 #!/bin/bash
@@ -1138,11 +1189,14 @@ echo "Hello $name, welcome to my program. “
 ``` 
 $ chmod 755 exread1.sh 
 
-## OUTPUT
 
 
 
 $ ./exread1.sh 
+
+## OUTPUT
+Enter your name: Alan
+Hello Alan, welcome to my program.
  
 cat funcex.sh
 ```bash
@@ -1161,10 +1215,10 @@ fi
 ```
 ## OUTPUT
  ./funcex.sh 
-
+Usage: badtest1 a b
  
  ./funcex.sh 1 2
-
+The result is 2
  
 cat argshift.sh
 ```bash
@@ -1176,8 +1230,12 @@ done
 ```
 $ chmod 777 argshift.sh
 
-## OUTPUT
+
 $ ./argshift.sh 1 2 3
+ ## OUTPUT
+1
+2
+3
  
  cat argshift1.sh
 ```bash
@@ -1193,8 +1251,13 @@ for (( i=0;i<$ELEMENTS;i++)); do
 done
 ```
 $ chmod 777 argshift.sh
-## OUTPUT
+
 $ ./argshift.sh 1 2 3
+ ## OUTPUT
+1
+2
+3
+
  
 cat argshift.sh
 ```bash
@@ -1206,10 +1269,25 @@ while (( "$#" )); do
 done
 set +x
 ```
+./argshift.sh 1 2 3
 ## OUTPUT
- ./argshift.sh 1 2 3
  
  
+ + (( 3 ))
++ echo 1
+1
++ shift
++ (( 2 ))
++ echo 2
+2
++ shift
++ (( 1 ))
++ echo 3
+3
++ shift
++ (( 0 ))
++ set +x
+
 cat > nc.awk
 ```bash
 BEGIN{}
@@ -1239,7 +1317,10 @@ ubcdfghj
 ```
 awk -f nc.awk data.dat
 ## OUTPUT 
- 
+ total characters 0
+Number of Lines are 10
+No of Words count: 10
+
 cat > palindrome.sh
 ```bash
 #num=545
@@ -1266,7 +1347,12 @@ else
 fi
 ```
 ## OUTPUT 
+Enter the number
+121
+Number is Palindrome
 
-
+Enter the number
+123
+Number is not a Palindrome
 # RESULT:
-The CommaThe Commands are executed successfully.nds are executed successfully.
+The Commands are executed successfully.
